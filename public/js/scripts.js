@@ -46,7 +46,7 @@ jQuery(document).on("ready", function() {
                 .fadeOut(500, function() {
                   var sendAddress = jQuery("#f1-email").val();
                   jQuery.ajax({
-                    url: "https://leaddata-api.herokuapp.com/sendMsg",
+                    url: "https://leadata-api.herokuapp.com/sendMsg",
                     type: "POST",
                     data: {
                       email: sendAddress
