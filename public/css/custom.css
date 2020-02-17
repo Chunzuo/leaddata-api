@@ -1,0 +1,53 @@
+.field1,
+.field2,
+.field3,
+.field4 {
+  display: none;
+}
+
+.btn-group button {
+  padding: 0;
+  background-color: #0082bb; /* Green background */
+  color: white; /* White text */
+  margin-bottom: 20px;
+  cursor: pointer; /* Pointer/hand icon */
+  width: 100%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #005ca7;
+}
+
+.btn-submit2 {
+  text-align: center;
+  width: 75%;
+  background-color: #0a6ebd;
+  padding: 0;
+  color: white;
+  margin-top: 10px;
+}
+
+.loadinga,
+.loadingaa,
+.content-toggle4,
+.content-toggle5,
+.content-toggle6,
+.content-toggle7 {
+  display: none;
+}
+
+.form-actions {
+  margin: 0;
+  background-color: transparent;
+  text-align: center;
+}
+
+.form-skip {
+  margin-top: 20px;
+}
+
+.slide-content {
+  height: 1000px;
+}
