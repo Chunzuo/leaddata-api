@@ -76,6 +76,17 @@ router.post("/sendMsg", (req, res) => {
               console.log(result);
               res.status(200).send(result);
             });
+
+            // Create contact
+            var contactInfo = {
+              email: email
+            };
+            contactInfo["p[" + listId + "]"] = listId;
+            ac.api("contact/add", contactInfo).then(result => {
+              console.log("Create contact result");
+              console.log("______");
+              console.log(result);
+            });
           });
         });
       });
