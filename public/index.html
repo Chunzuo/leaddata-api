@@ -149,7 +149,7 @@
                           <div class="cs-notifications-content"></div>
                         </div>
                         <!-- .cs-notifications end -->
-                        <form id="form-quiz" class="quiz">
+                        <div id="form-quiz" class="quiz">
                           <fieldset>
                             <h4>
                               Why are you interested in pursuing a degree in
@@ -233,6 +233,7 @@
                                 placeholder="Email..."
                                 class="f1-email form-control"
                                 id="f1-email"
+                                onkeypress="checkSubmit(event)"
                               />
                             </div>
                             <div class="form-actions mx-auto">
@@ -274,7 +275,7 @@
                             <p>Please wait...</p>
                             <img alt="loading" src="images/loading_round.gif" />
                           </div>
-                        </form>
+                        </div>
                         <!-- #form-quiz end -->
                         <!-- <form id="form-cta-subscribe-2" class="redirected">
                           <div class="form-group">

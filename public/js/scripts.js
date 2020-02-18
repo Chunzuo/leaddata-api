@@ -29,52 +29,51 @@ jQuery(document).on("ready", function() {
 
   // submit
   jQuery("button.btn-submit2, .form-skip>a").on("click", function() {
-    jQuery(".box-title").fadeOut(500);
-    jQuery(".field4").fadeOut(500);
-    jQuery("div.loadinga").fadeIn(1000, function() {
-      jQuery(".content-toggle4")
-        .fadeIn(500)
-        .delay(1500)
-        .fadeOut(500, function() {
-          jQuery(".content-toggle5")
-            .fadeIn(500)
-            .delay(1500)
-            .fadeOut(500, function() {
-              jQuery(".content-toggle6")
-                .fadeIn(500)
-                .delay(1500)
-                .fadeOut(500, function() {
-                  var sendAddress = jQuery("#f1-email").val();
-                  jQuery.ajax({
-                    url: "https://leadata-api.herokuapp.com/sendMsg",
-                    type: "POST",
-                    data: {
-                      email: sendAddress
-                    },
-                    complete: function(result) {
-                      jQuery(".content-toggle7").fadeIn(1500, function() {
-                        jQuery(".loadinga").fadeOut(500, function() {
-                          // jQuery(".loadingaa").fadeIn(500);
-                        });
-                      });
-                      console.log(result);
-                    }
-                  });
-                  // Email.send({
-                  //   Host: "smtp.mailtrap.io",
-                  //   Username: "669643ee6cd063",
-                  //   Password: "dc7b2d01a475c9",
-                  //   Port: "2525",
-                  //   To: sendAddress,
-                  //   From: "sender@example.com",
-                  //   Subject: "Test email",
-                  //   Body:
-                  //     "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
-                  // }).then(message => {
-                  // });
-                });
-            });
-        });
-    });
+    submitForm();
   });
 });
+
+function checkSubmit(e) {
+  console.log(e.keyCode);
+  if (e.keyCode == 13) {
+    submitForm();
+  }
+}
+
+function submitForm() {
+  jQuery(".box-title").fadeOut(500);
+  jQuery(".field4").fadeOut(500);
+  jQuery("div.loadinga").fadeIn(1000, function() {
+    jQuery(".content-toggle4")
+      .fadeIn(500)
+      .delay(1500)
+      .fadeOut(500, function() {
+        jQuery(".content-toggle5")
+          .fadeIn(500)
+          .delay(1500)
+          .fadeOut(500, function() {
+            jQuery(".content-toggle6")
+              .fadeIn(500)
+              .delay(1500)
+              .fadeOut(500, function() {
+                var sendAddress = jQuery("#f1-email").val();
+                jQuery.ajax({
+                  url: "https://leadata-api.herokuapp.com/sendMsg",
+                  type: "POST",
+                  data: {
+                    email: sendAddress
+                  },
+                  complete: function(result) {
+                    jQuery(".content-toggle7").fadeIn(1500, function() {
+                      jQuery(".loadinga").fadeOut(500, function() {
+                        // jQuery(".loadingaa").fadeIn(500);
+                      });
+                    });
+                    console.log(result);
+                  }
+                });
+              });
+          });
+      });
+  });
+}
